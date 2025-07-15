@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { useState, useRef } from 'react'
 import { supabase } from '@/src/lib/supabase'
-import SmartAdminImageUpload from '@/src/components/SmartAdminImageUpload'
 import SmartImageUpload from '@/src/components/SmartImageUpload'
 import { nanoid } from 'nanoid'
 
@@ -149,7 +148,12 @@ export default function AddTourPage() {
         {/* Main Image Upload */}
         <div>
           <label className="block text-sm font-medium text-[#001934] mb-1">Main Image</label>
-          <SmartAdminImageUpload onImageUpload={setMainImage} currentImage={mainImage} />
+          <SmartImageUpload
+            images={mainImage ? [mainImage] : []}
+            onImagesChange={urls => setMainImage(urls[0] || "")}
+            maxImages={1}
+            folder="main"
+          />
         </div>
         {/* Gallery Images Upload */}
         <div>

@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { supabase } from "@/src/lib/supabase"
 import { ArrowLeft, Plus, X, Calendar, MapPin, DollarSign, Clock, Image as ImageIcon } from "lucide-react"
 import Link from "next/link"
-import AdminImageUpload from "@/src/components/AdminImageUpload"
+import SmartImageUpload from "@/src/components/SmartImageUpload"
 
 interface ItineraryDay {
   day: number
@@ -148,10 +148,10 @@ export default function EditEventPage() {
     }))
   }
 
-  const handleGalleryImageUpload = (url: string) => {
+  const handleGalleryImageUpload = (urls: string[]) => {
     setFormData(prev => ({
       ...prev,
-      gallery_images: [...prev.gallery_images, url]
+      gallery_images: urls
     }))
   }
 
@@ -333,16 +333,19 @@ export default function EditEventPage() {
             <div className="space-y-6">
               <div>
                 <Label className="text-sm font-semibold text-[#001934] mb-2 block">Cover Image *</Label>
-                <AdminImageUpload 
-                  onImageUpload={handleMainImageUpload} 
-                  currentImage={formData.cover_image}
+                <SmartImageUpload
+                  images={formData.cover_image ? [formData.cover_image] : []}
+                  onImagesChange={urls => handleMainImageUpload(urls[0] || "")}
+                  maxImages={1}
+                  folder="cover"
                 />
               </div>
 
               <div>
                 <Label className="text-sm font-semibold text-[#001934] mb-2 block">Gallery Images</Label>
-                <AdminImageUpload 
-                  onImageUpload={handleGalleryImageUpload}
+                <SmartImageUpload
+                  images={formData.gallery_images}
+                  onImagesChange={handleGalleryImageUpload}
                   folder="gallery"
                 />
                 
