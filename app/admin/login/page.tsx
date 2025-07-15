@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/src/lib/supabase"
 import Image from "next/image"
@@ -12,6 +12,19 @@ export default function AdminLoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setIsAuthenticated(!!data.session)
+    })
+  }, [])
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    setIsAuthenticated(false)
+    router.push("/admin/login")
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,8 +45,16 @@ export default function AdminLoginPage() {
     }}>
       <div className="w-full max-w-sm bg-white/90 rounded-xl shadow-lg p-6 sm:p-8">
         <div className="flex justify-center mb-6">
-          <Image src="/images/logo.jpeg" alt="Royal Routes Logo" width={64} height={64} className="rounded-full" />
+          <Image src="/logo2.jpg" alt="Stratum Tech U Ltd Logo" width={64} height={64} className="rounded-full" />
         </div>
+        {isAuthenticated && (
+          <button
+            onClick={handleSignOut}
+            className="w-full mb-4 py-2 rounded-lg font-semibold text-white bg-[#001934] hover:bg-[#B8860B] transition-all duration-200 shadow-md"
+          >
+            Sign Out
+          </button>
+        )}
         <h1 className="text-2xl font-bold text-[#001934] mb-6 text-center">Admin Login</h1>
         {error && <div className="bg-red-100 text-red-700 p-2 rounded mb-4 text-center">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-5">
