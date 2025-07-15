@@ -1,0 +1,78 @@
+insert into tours (
+  id, title, short_description, long_description, main_image, gallery_images, price_per_person, duration, destination, category, itinerary, included, excluded
+) values
+(
+  'volcanoes-gorilla-trek',
+  'Volcanoes National Park Gorilla Trek',
+  'Experience the magnificent mountain gorillas in their natural habitat. A once-in-a-lifetime adventure through Rwanda''s pristine wilderness.',
+  'Embark on an unforgettable journey into the heart of Volcanoes National Park to witness the majestic mountain gorillas. This tour offers an intimate experience with one of Rwanda''s most iconic wildlife species. Trek through lush bamboo forests, guided by experienced trackers, and spend a magical hour observing a gorilla family in their natural environment. Beyond the trek, you''ll learn about conservation efforts and the local culture that protects these magnificent creatures.',
+  '/images/tours/volca1.jpg',
+  ARRAY['/images/tours/volca1.jpg','/images/tours/volca2.jpg','/images/tours/volca3.jpg','/images/tours/volca4.jpg','/images/tours/volca5.gif'],
+  '$1500 / Per person',
+  '1 Day Trek',
+  'Volcanoes National Park',
+  'Gorilla Trekking',
+  '[{"day":1,"title":"Gorilla Trekking Adventure","description":"Early morning departure to the park headquarters for a briefing. Embark on the gorilla trek, which can take several hours depending on the gorillas'' location. Spend one hour with the gorillas. Descend and return to your accommodation or transfer back to Kigali."}]'::jsonb,
+  ARRAY['Gorilla trekking permit (if package selected)','Experienced park guides and trackers','Park entrance fees','Bottled water during trek','Transportation to/from park'],
+  ARRAY['Accommodation','Meals','Tips']
+),
+(
+  'lake-kivu-scenic-tour',
+  'Lake Kivu Scenic Escape',
+  'Discover the beauty of Lake Kivu with boat rides, stunning sunsets, and peaceful lakeside relaxation in one of Africa''s most beautiful lake settings.',
+  'Escape to the tranquil shores of Lake Kivu, one of Africa''s Great Lakes. This tour offers a perfect blend of relaxation and exploration. Enjoy scenic boat trips to nearby islands, witness traditional fishing methods, and soak in breathtaking sunsets over the water. Explore the lakeside towns of Gisenyi or Kibuye, and learn about local life and coffee production in the region. Ideal for unwinding and experiencing Rwanda''s natural beauty.',
+  '/images/tours/kivu6.jpg',
+  ARRAY['/images/tours/kivu6.jpg','/images/tours/kivu1.jpg','/images/tours/kivu2.jpg','/images/tours/kivu5.jpg','/images/tours/kivu3.webp'],
+  '$350 / Per person',
+  '2-3 Days',
+  'Lake Kivu (Gisenyi/Kibuye)',
+  'Scenic & Relaxation',
+  '[{"day":1,"title":"Arrival in Gisenyi & Lakeside Relaxation","description":"Transfer to Gisenyi (Rubavu) on the shores of Lake Kivu. Check into your hotel and enjoy an afternoon relaxing by the lake, swimming, or exploring the town."},{"day":2,"title":"Boat Trip & Coffee Experience","description":"Morning boat trip on Lake Kivu to visit nearby islands and see local fishing communities. In the afternoon, visit a coffee washing station to learn about Rwanda''s renowned coffee."},{"day":3,"title":"Optional Activities & Departure","description":"Enjoy optional activities like kayaking or visiting hot springs. Later, transfer back to Kigali or your next destination."}]'::jsonb,
+  ARRAY['Accommodation (mid-range)','Meals as specified','Boat trip on Lake Kivu','Coffee tour','Local guide','Transportation to/from Lake Kivu'],
+  ARRAY['Optional activities','Drinks','Tips']
+),
+(
+  'nyungwe-forest-canopy-walk',
+  'Nyungwe Forest Canopy Walk & Primates',
+  'Walk among the treetops in one of Africa''s oldest rainforests. Spot primates and enjoy breathtaking forest views from the famous canopy walkway.',
+  'Journey into the ancient Nyungwe Forest National Park, a biodiversity hotspot. The highlight is the thrilling canopy walkway, offering a unique perspective of the rainforest from 50 meters above ground. Search for colobus monkeys, chimpanzees (optional trek), and a myriad of bird species. This tour is an immersive experience in one of Africa''s most important montane rainforests, home to 13 primate species and over 300 bird species.',
+  '/images/tours/nyungwe1.jpg',
+  ARRAY['/images/tours/nyungwe1.jpg','/images/tours/nyungwe2.jpg','/images/tours/nyungwe3.jpg','/images/tours/nyungwe4.jpg'],
+  '$450 / Per person',
+  '2-3 Days',
+  'Nyungwe Forest National Park',
+  'Nature & Wildlife',
+  '[{"day":1,"title":"Transfer to Nyungwe & Colobus Monkey Trek","description":"Drive to Nyungwe Forest National Park. In the afternoon, embark on a trek to see the large troops of Angolan colobus monkeys."},{"day":2,"title":"Canopy Walk & Waterfall Hike","description":"Experience the famous Nyungwe Canopy Walk in the morning. In the afternoon, you can opt for a hike to a scenic waterfall or relax at your lodge."},{"day":3,"title":"Optional Chimpanzee Trek & Departure","description":"Optional early morning chimpanzee trek (requires pre-booking). Afterwards, transfer back to Kigali."}]'::jsonb,
+  ARRAY['Accommodation','Meals as specified','Park entrance fees','Canopy walk permit','Colobus monkey trek','Professional guide','Transportation'],
+  ARRAY['Chimpanzee trekking permit','Drinks','Tips']
+),
+(
+  'kigali-city-cultural-tour',
+  'Kigali City & Cultural Exploration',
+  'Explore Rwanda''s vibrant capital city. Visit museums, bustling markets, and learn about the country''s remarkable history and rich cultural heritage.',
+  'Discover the heart of Rwanda with a comprehensive tour of Kigali. Visit the Kigali Genocide Memorial for a poignant understanding of the country''s past and remarkable recovery. Explore bustling local markets like Kimironko, art galleries showcasing Rwandan talent, and significant historical landmarks. This tour provides insight into Kigali''s transformation into a clean, safe, and dynamic African city, often called the ''Singapore of Africa''.',
+  '/images/tours/kigali3.jpg',
+  ARRAY['/images/tours/kigali3.jpg','/images/tours/kigali4.jpg','/images/tours/kigali2.jpg','/images/tours/kigali1.jpg'],
+  '$120 / Per person',
+  '1 Day',
+  'Kigali',
+  'Cultural & City',
+  '[{"day":1,"title":"Full Day Kigali City Tour","description":"Visit the Kigali Genocide Memorial, Kandt House Museum, Niyo Arts Gallery, Kimironko Market, and drive through different neighborhoods of the city. Lunch at a local restaurant included."}]'::jsonb,
+  ARRAY['Professional guide','Entrance fees to sites mentioned','Lunch','Bottled water','Transportation within city'],
+  ARRAY['Hotel pickup/drop-off (can be arranged)','Dinner','Personal shopping','Tips']
+),
+(
+  'akagera-wildlife-safari',
+  'Akagera National Park Wildlife Safari',
+  'Experience Rwanda''s only savanna park with game drives to see the Big Five, boat safaris on Lake Ihema, and stunning African wildlife.',
+  'Discover Rwanda''s premier wildlife destination at Akagera National Park. This expansive savanna park is home to the Big Five - lions, elephants, buffalos, leopards, and rhinos. Enjoy thrilling game drives across diverse landscapes, from rolling hills to wetlands. Take a boat safari on Lake Ihema to spot hippos, crocodiles, and numerous bird species. This park represents one of Africa''s greatest conservation success stories.',
+  '/images/tours/akagera1.jpg',
+  ARRAY['/images/tours/akagera1.jpg','/images/tours/akagera2.webp','/images/tours/akagera3.jpg','/images/tours/akagera4.jpg','/images/tours/akagera5.jpg'],
+  '$900 / Per person',
+  '2-3 Days',
+  'Akagera National Park',
+  'Wildlife Safari',
+  '[{"day":1,"title":"Arrival & Afternoon Game Drive","description":"Arrive at Akagera National Park. Afternoon game drive to spot elephants, giraffes, and antelopes."},{"day":2,"title":"Full Day Safari & Boat Trip","description":"Morning and afternoon game drives to see lions, rhinos, and more. Boat safari on Lake Ihema for hippos and crocodiles."},{"day":3,"title":"Optional Morning Drive & Departure","description":"Optional early morning game drive. Depart for Kigali."}]'::jsonb,
+  ARRAY['Accommodation','Meals as specified','Park entrance fees','Game drives','Boat safari','Professional guide','Transportation'],
+  ARRAY['Drinks','Tips']
+); 
