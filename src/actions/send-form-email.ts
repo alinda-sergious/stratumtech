@@ -90,6 +90,12 @@ export async function sendFormEmail({ formType, formData, userEmail, userName }:
         <div style="background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px;">
           <h2 style="color: #001934; margin-top: 0;">Dear ${userName},</h2>
           <p>Thank you for your <strong>${formType.toLowerCase()}</strong> submission. We have received your message and appreciate your interest in Stratum Tech Ug Ltd.</p>
+
+          ${formData.selectedItem ? `
+            <div style="background: #fffbe6; border-left: 4px solid #B8860B; padding: 16px; border-radius: 8px; margin: 20px 0;">
+              <strong>Item Booked:</strong> <span style="color: #001934; font-weight: bold;">${formData.selectedItem}</span>
+            </div>
+          ` : ""}
           
           <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #4caf50;">
             <h3 style="margin-top: 0; color: #2e7d32;">🚀 What happens next?</h3>
