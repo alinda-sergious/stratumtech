@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(true)
 
   // WhatsApp number - replace with actual business number
-  const whatsappNumber = "+256705515552" // Replace with your actual WhatsApp number
+  const whatsappNumber = "+256740498129" // Updated WhatsApp number
   const message = "Hello! I'm interested in your construction services."
 
   const handleWhatsAppClick = () => {

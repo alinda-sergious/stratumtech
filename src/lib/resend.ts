@@ -11,7 +11,7 @@ export const resend = new Resend(apiKey)
 
 // Use Resend's default sender domain
 export const DEFAULT_FROM_EMAIL = "onboarding@resend.dev"
-export const ADMIN_EMAIL = "alindasergio@gmail.com"
+export const ADMIN_EMAIL = "Sratum.tech.ltd@gmail.com"
 
 // Email sending status check
 export const isEmailConfigured = () => {
